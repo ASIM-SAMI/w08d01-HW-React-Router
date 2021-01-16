@@ -13,7 +13,7 @@
 Let's get some more practice with routing in React. There is a large javascript
 array for which you to work with located in [gameOfThrones.js](gameOfThrones.js).
 
-The goal of the homewrok is to display this data with the following routes:
+The goal of the homework is to display this data with the following routes:
 
 - `/families` -  show all family names as links to view that family.
 - `/families/:id` - show a single family's data with links to view individual
