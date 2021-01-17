@@ -29,6 +29,22 @@ Show the message "I appear on all pages" on top of every page.
 Show an error page when a user enters a page that doesn't exist.
 <br/>
 
+<details>
+  <summary>Hint</summary>
+  Link to member page would look like this: 
+  <code>
+  
+        import { useParams, Link } from 'react-router-dom' 
+
+        // Before component return 
+        const { family_id } = useParams()
+
+        <Link to={`/families/${family_id}/members/${member.wikiSuffix}`}>
+                    {member.name}
+        </Link>
+  </code> 
+</details>
+
 ## Need more of a challenge? 
 Create these two routes to handle the following:
 
