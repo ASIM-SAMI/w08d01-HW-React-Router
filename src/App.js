@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import FamiliesPage from "./pages/FamiliesPage";
+import FamilyPage from "./pages/FamilyPage";
+import MemberPage from './pages/MemberPage'
+import React, { useState } from "react";
 
 function App() {
+  const [familySelected, setFamilySelected] = useState({});
+  const [memberSelected, setMemberSelected] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+
+      <Route  path="/">
+          <h1>I appear on all pages"</h1>
+       </Route>
+
+        <Route exact path="/families">
+          <FamiliesPage setFamilySelected={setFamilySelected} />
+        </Route>
+
+        <Route exact path="/families/:family">
+          <FamilyPage familySelected={familySelected} />
+        </Route>
+
+        <Route exact path="/members/:member">
+          <MemberPage />
+        </Route>
+
+      
+      </div>
+
+    </Router>
   );
 }
 
